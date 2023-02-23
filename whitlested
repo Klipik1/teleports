@@ -1,0 +1,6 @@
+local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/Klipik1/teleports/main/witlelst"))()
+if whitelistecheck[game:service('Players').LocalPlayer.UserId] then
+print("Whitelisted ^-^")
+else
+  game:service('Players').LocalPlayer:Kick('No exploiting! (#NoNoNo)')
+end
