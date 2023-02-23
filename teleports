@@ -1,4 +1,4 @@
-function tp(x,y,z)
+function tp(3,3,3)
 -- SETTINGS START
 local valtomove = 4
 noclip = true
@@ -63,4 +63,3 @@ end
 end
 end)
 end)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3, 3, 3)
