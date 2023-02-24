@@ -1,6 +1,14 @@
 local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/Klipik1/teleports/main/witlelst"))()
 if whitelistecheck[game:service('Players').LocalPlayer.UserId] then
 print("Whitelisted ^-^")
+local TPBypass
+TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(self, ...)
+  local args = {...}
+  if self.Name == "Returner" and args[1] == "idklolbrah2de"  then
+          return "  ___XP DE KEY"
+      end
+  return TPBypass(self, ...)
+end))
 else
   game:service('Players').LocalPlayer:Kick('No exploiting! (#NoNoNo)')
 end
