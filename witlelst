@@ -1,5 +1,4 @@
 userids = {
--- [айди игрока в роблоксе] = true,
 [2566040440] = true
 }
 return userids
