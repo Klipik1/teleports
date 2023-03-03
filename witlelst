@@ -1,4 +1,7 @@
 userids = {
-[2566040440] = true
+[2566040440] = true, -- GetNubbed360
+[1661026302] = true, -- skykio124
+[1921327975] = true, -- BaconHairedBoi3
+[1661014904] = true -- skykio123
 }
 return userids
