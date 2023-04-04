@@ -23,14 +23,21 @@ end
 local function sendWebhook(Blehh, eb)
     pcall(function()
     local everyone
+    local omagad
     if getgenv().eb == "" then
         everyone = ""
     elseif getgenv().eb ~= "" then
         everyone = "<@"..getgenv().eb..">"
     end
+    if getgenv().omagad == "" then
+        omagad = "сп мун"
+    elseif getgenv().omagad ~= "" then
+        omagad = "getgenv().omagad"
+    end
+
     local data = {
         ['content'] = everyone,
-        ['username'] = "сп мун",
+        ['username'] = omagad,
         ["embeds"] = {{
             ['title'] = "Сенс Гей",
             ['color'] = tonumber(0xff7f42),
@@ -72,6 +79,14 @@ while wait() do
     game.workspace.Living:WaitForChild(LocalPlayer.name)
     wait(5)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
+    if LocalPlayer.PlayerStats.Stand.Value == "The World" then
+        print('Япии, ты получил The World')
+        sendWebhook("Ёмаё ты гетнул The World")
+        setclipboard(game.JobId)
+        ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
+        ca.TextSize=33;da.Parent=ca
+        break
+    end
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
     if LocalPlayer.PlayerStats.Stand.Value == "None" then
