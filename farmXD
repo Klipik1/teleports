@@ -82,7 +82,7 @@ while wait() do
     wait(5)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
     if LocalPlayer.PlayerStats.Stand.Value == "The World" then
-        sendWebhook("бро, у тебя уже есть ".. LocalPlayer.PlayerStats.Stand.Value)
+        sendWebhook("бро, у тебя уже есть " .. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
@@ -98,7 +98,7 @@ while wait() do
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
     if LocalPlayer.PlayerStats.Stand.Value == "The World" then
-        sendWebhook("Вау, ты получил ".. LocalPlayer.PlayerStats.Stand.Value)
+        sendWebhook("Вау, ты получил " .. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
