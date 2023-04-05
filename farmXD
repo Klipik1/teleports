@@ -39,7 +39,7 @@ local function sendWebhook(Blehh, eb)
         ['content'] = everyone,
         ['username'] = omagad,
         ["embeds"] = {{
-            ['title'] = "Сенс Гей",
+            ['title'] = "Ок",
             ['color'] = tonumber(0xff7f42),
             ["footer"] = {
                 ["text"] = (""),
