@@ -1,7 +1,3 @@
-getgenv().eb = "" -- Твой айди в дискорде
-getgenv().be = "" -- Твой вебхук
-getgenv().omagad = "" -- имя какое хочешь вебхука
-getgenv().wat = "Star Platinum", "The World" -- Сюда стенды который хочешь получить
 repeat wait() until game:IsLoaded()
 local TPBypass
 TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(self, ...)
@@ -100,14 +96,13 @@ while wait() do
     wait(0.5)
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
-    if LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
+    elseif LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
         print('Япии, ты получил'..LocalPlayer.PlayerStats.Stand.Value)
         sendWebhook("Вау ты получил".. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
         break
-    end
     UseItem("Rokakaka")
 else
     UseItem("Rokakaka")
