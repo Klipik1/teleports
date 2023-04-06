@@ -39,7 +39,7 @@ local function sendWebhook(Blehh, eb)
         ['content'] = everyone,
         ['username'] = omagad,
         ["embeds"] = {{
-            ['title'] = "Ок",
+            ['title'] = "",
             ['color'] = tonumber(0xff7f42),
             ["footer"] = {
                 ["text"] = (""),
@@ -51,7 +51,7 @@ local function sendWebhook(Blehh, eb)
                     ["value"] = "||"..game.Players.LocalPlayer.Name.."||" -- This is the value of your field.
                 },
                 {
-                    ["name"] = "Что выпало", -- This is  the title of your field.
+                    ["name"] = "Что произошло", -- This is  the title of your field.
                     ["value"] = Blehh -- This is the value of your field.
                 },
             }}
@@ -81,26 +81,26 @@ while wait() do
     game.workspace.Living:WaitForChild(LocalPlayer.name)
     wait(5)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
-    if LocalPlayer.PlayerStats.Stand.Value == "The World" then
-        sendWebhook("бро, у тебя уже есть " .. LocalPlayer.PlayerStats.Stand.Value)
+    if LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
+        sendWebhook("бро, у тебя уже есть"..LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
-        ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
+        ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
         break
     end
-    ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
+    ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
     if LocalPlayer.PlayerStats.Stand.Value == "None" then
     wait(1)
     UseItem(arr)
     repeat wait() until LocalPlayer.PlayerStats:WaitForChild'Stand'.Value ~= "None"
     wait(0.5)
-    ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
+    ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
-    if LocalPlayer.PlayerStats.Stand.Value == "The World" then
-        sendWebhook("Вау, ты получил " .. LocalPlayer.PlayerStats.Stand.Value)
+    if LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
+        sendWebhook("Вау, ты получил".. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
-        ca.Font=Enum.Font.SourceSansSemibold;ca.Text=game:GetService("Players").LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
+        ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
         break
     end
