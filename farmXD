@@ -30,7 +30,7 @@ local function sendWebhook(Blehh, eb)
         everyone = "<@"..getgenv().eb..">"
     end
     if getgenv().omagad == "" then
-        omagad = "сп мун"
+        omagad = "Сияние"
     elseif getgenv().omagad ~= "" then
         omagad = getgenv().omagad
     end
@@ -40,7 +40,7 @@ local function sendWebhook(Blehh, eb)
         ['username'] = omagad,
         ["embeds"] = {{
             ['title'] = "",
-            ['color'] = tonumber(0xff7f42),
+            ['color'] = tonumber(#3467eb),
             ["footer"] = {
                 ["text"] = ("И помните: Сияние заботится о вас!"),
                 ["icon_url"] = "https://cdn.discordapp.com/attachments/902801014766338052/1094299531736264745/6737d8768484458da727394a599b7742.png"
