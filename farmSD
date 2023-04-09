@@ -98,24 +98,24 @@ TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(s
       end
   return TPBypass(self, ...)
 end))
+local function XD()
+    local repFirst = game.GetService(game, 'ReplicatedFirst');
+    local itemSpawn = repFirst.ItemSpawn;
+    
+    local vector3Metatable = getrawmetatable(Vector3.new());
+    local oldIndex = rawget(vector3Metatable, '__index');
+    
+    setreadonly(vector3Metatable, false); do
+        vector3Metatable.__index = newcclosure(function(self, idx)
+            if(string.lower(idx) == 'magnitude' and getcallingscript() == itemSpawn) then
+                return 0;
+            end;
+            return oldIndex(self, idx);
+        end);
+    end; setreadonly(vector3Metatable, true);
+    end
 if workspace.Roka.Value ~= 25 then
     while task.wait() do
-        local function XD()
-            local repFirst = game.GetService(game, 'ReplicatedFirst');
-            local itemSpawn = repFirst.ItemSpawn;
-            
-            local vector3Metatable = getrawmetatable(Vector3.new());
-            local oldIndex = rawget(vector3Metatable, '__index');
-            
-            setreadonly(vector3Metatable, false); do
-                vector3Metatable.__index = newcclosure(function(self, idx)
-                    if(string.lower(idx) == 'magnitude' and getcallingscript() == itemSpawn) then
-                        return 0;
-                    end;
-                    return oldIndex(self, idx);
-                end);
-            end; setreadonly(vector3Metatable, true);
-            end
             XD()
             
     for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
@@ -142,23 +142,7 @@ if workspace.Roka.Value ~= 25 then
 end
 if workspace.Arrow.Value ~= 25 then
     while task.wait(3) do
-        local function XD()
-            local repFirst = game.GetService(game, 'ReplicatedFirst');
-            local itemSpawn = repFirst.ItemSpawn;
-            
-            local vector3Metatable = getrawmetatable(Vector3.new());
-            local oldIndex = rawget(vector3Metatable, '__index');
-            
-            setreadonly(vector3Metatable, false); do
-                vector3Metatable.__index = newcclosure(function(self, idx)
-                    if(string.lower(idx) == 'magnitude' and getcallingscript() == itemSpawn) then
-                        return 0;
-                    end;
-                    return oldIndex(self, idx);
-                end);
-            end; setreadonly(vector3Metatable, true);
-            end
-            XD()
+XD()
     for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
         if aga:IsA("Model") then
             for _, aga2 in pairs(aga:GetChildren()) do
@@ -197,8 +181,9 @@ while wait() do
     wait(3.8)
     game.workspace.Living:WaitForChild(game.Players.LocalPlayer.Name)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
-    if workspace.Arrow.Value == 1 or workspace.Roka.Value == 1 then
+    if workspace.Arrow.Value == 0 or workspace.Roka.Value == 0 then
         sendWebhook("Закончились все роки и стрелы!")
+        game.TeleportService:Teleport(game.PlaceId)
     elseif LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
         sendWebhook("бро, у тебя уже есть " .. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
@@ -215,6 +200,10 @@ while wait() do
     wait(0.5)
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
+    if workspace.Arrow.Value == 0 or workspace.Roka.Value == 0 then
+        sendWebhook("Закончились все роки и стрелы!")
+        game.TeleportService:Teleport(game.PlaceId)
+    end
     if LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
         sendWebhook("Вау, ты получил " .. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
