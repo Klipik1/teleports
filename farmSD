@@ -1,0 +1,230 @@
+LocalPlayer = game.Players.LocalPlayer
+workspace = game.workspace
+if workspace:FindFirstChild("Arrow")==nil then
+    local hi = Instance.new("NumberValue")
+    hi.Parent = game.Workspace
+    hi.Name = ("Arrow")
+end
+if workspace:FindFirstChild("Roka")==nil then
+    local hi = Instance.new("NumberValue")
+    hi.Parent = game.Workspace
+    hi.Name = ("Roka")
+end
+local function updateArrows()
+    local Children = {}
+    for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+        if Obj.Name == ("Mysterious Arrow") then
+            table.insert(Children, Obj)
+            if workspace:FindFirstChild("Arrow") then
+                workspace.Arrow.Value = #Children
+            end
+        end
+    end
+end
+local function updateRokakas()
+    local Children = {}
+    for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+        if Obj.Name == ("Rokakaka") then
+            table.insert(Children, Obj)
+            if workspace:FindFirstChild("Roka") then 
+                workspace.Roka.Value = #Children
+            end
+        end
+    end
+end
+updateRokakas()
+updateArrows()
+getgenv().AutoCaptcha = true
+repeat wait() until game:IsLoaded()
+workspace = game.workspace
+LocalPlayer = game.Players.LocalPlayer
+local plr = game:GetService("Players").LocalPlayer
+    
+repeat task.wait() until plr:FindFirstChildOfClass("PlayerGui")
+-- wait for the PlayerGui gui to exist
+local plrgGui = plr.PlayerGui
+
+local function bypass(new)
+    print("bypassing")
+    for i,v in next, new:GetDescendants() do
+        if v:IsA("ImageButton") then
+            local text = v:FindFirstChildOfClass("TextLabel")
+            if text and text.Text ~= "X" then
+                warn(v)
+                print(text.TextColor3)
+                repeat
+                    task.wait()
+                until text.TextColor3 ~= Color3.fromRGB(255,255,255)
+                warn("after :", text.TextColor3)
+                if text.TextColor3 == Color3.fromRGB(0, 255, 0) then -- its god
+                    print("Good : " .. text.Text .."\n")
+                    firesignal(v.MouseEnter) -- it require this one
+                    firesignal(v.MouseButton1Up)
+                    firesignal(v.MouseButton1Click)
+                    firesignal(v.Activated)
+
+                elseif text.TextColor3 == Color3.fromRGB(255, 0, 0) then -- its a bad
+                    warn("Bad : " .. text.Text .."\n")
+                end
+            end
+        end
+    end
+end
+
+plrgGui.ChildAdded:Connect(function(new)
+    if not getgenv().AutoCaptcha then return end
+    if new:IsA("ScreenGui")
+    and new.Name == "ScreenGui" and new.DisplayOrder == 100 then
+        print("New captcha incoming")
+        bypass(new)
+    end
+end)
+function UseItem(item)
+    local ohString1 = "LearnSkill"
+    local ohTable2 = {
+    ["Skill"] = "Worthiness II",
+    ["SkillTreeType"] = "Character"
+    }
+    LocalPlayer.Character.RemoteFunction:InvokeServer(ohString1, ohTable2)
+    LocalPlayer.Backpack[item].Parent = LocalPlayer.Character
+    LocalPlayer.Character[item]:Activate()
+    firesignal(LocalPlayer.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"ClickContinue".MouseButton1Click)
+    firesignal(LocalPlayer.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"Options":WaitForChild"Option1":WaitForChild"TextButton".MouseButton1Click)
+end
+TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(self, ...)
+  local args = {...}
+  if self.Name == "Returner" and args[1] == "idklolbrah2de"  then
+          return "  ___XP DE KEY"
+      end
+  return TPBypass(self, ...)
+end))
+if workspace.Roka.Value ~= 25 then
+    while task.wait() do
+        local function XD()
+            local repFirst = game.GetService(game, 'ReplicatedFirst');
+            local itemSpawn = repFirst.ItemSpawn;
+            
+            local vector3Metatable = getrawmetatable(Vector3.new());
+            local oldIndex = rawget(vector3Metatable, '__index');
+            
+            setreadonly(vector3Metatable, false); do
+                vector3Metatable.__index = newcclosure(function(self, idx)
+                    if(string.lower(idx) == 'magnitude' and getcallingscript() == itemSpawn) then
+                        return 0;
+                    end;
+                    return oldIndex(self, idx);
+                end);
+            end; setreadonly(vector3Metatable, true);
+            end
+            XD()
+            
+    for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
+        if aga:IsA("Model") then
+            for _, aga2 in pairs(aga:GetChildren()) do
+            if aga2:IsA("MeshPart") then
+            elseif not aga:FindFirstChild("ProximityPrompt") then
+                game.TeleportService:Teleport(game.PlaceId)
+                elseif aga:FindFirstChild("ProximityPrompt") then
+                    elseif aga.ProximityPrompt.ObjectText == "Rokakaka" and aga2.Transparency ~= 1 then
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = aga:GetModelCFrame()
+                        wait(0.5)
+                    elseif aga:FindFirstChild("ProximityPrompt") then
+                            fireproximityprompt(aga.ProximityPrompt)
+                            wait(1.5)
+                            if workspace.Roka.Value == 25 then
+                                game.TeleportService:Teleport(game.PlaceId)
+                            end
+                    end
+            end
+        end
+    end
+    end
+end
+if workspace.Arrow.Value ~= 25 then
+    while task.wait(3) do
+        local function XD()
+            local repFirst = game.GetService(game, 'ReplicatedFirst');
+            local itemSpawn = repFirst.ItemSpawn;
+            
+            local vector3Metatable = getrawmetatable(Vector3.new());
+            local oldIndex = rawget(vector3Metatable, '__index');
+            
+            setreadonly(vector3Metatable, false); do
+                vector3Metatable.__index = newcclosure(function(self, idx)
+                    if(string.lower(idx) == 'magnitude' and getcallingscript() == itemSpawn) then
+                        return 0;
+                    end;
+                    return oldIndex(self, idx);
+                end);
+            end; setreadonly(vector3Metatable, true);
+            end
+            XD()
+    for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
+        if aga:IsA("Model") then
+            for _, aga2 in pairs(aga:GetChildren()) do
+                if LocalPlayer.PlayerGui:FindFirstChild("Message") ~= nil then
+                    game.TeleportService:Teleport(game.PlaceId)
+                end
+                if aga2:IsA("MeshPart") then 
+                    if aga:FindFirstChild("ProximityPrompt") then
+                    if aga.ProximityPrompt.ObjectText == "Mysterious Arrow" and aga2.Transparency ~= 1 then
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = aga:GetModelCFrame()
+                        wait(0.5)
+                        if aga:FindFirstChild("ProximityPrompt") then
+                            fireproximityprompt(aga.ProximityPrompt)
+                            wait(1)
+                            end
+                    end
+                    end
+                end
+            end
+        end
+    end
+    end
+end
+if workspace.Roka.Value == 25 and workspace.Arrow.Value == 25 then
+    wait(0.5)local ba=Instance.new("ScreenGui")
+    local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+    local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+    ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+    ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+    ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,370,0,52)
+    ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Загрузка..." ca.TextColor3=Color3.new(0,1,1)
+    ca.TextSize=33;da.Parent=ca
+    roka = "Rokakaka"
+    arr = "Mysterious Arrow"
+while wait() do
+    wait(3.8)
+    game.workspace.Living:WaitForChild(game.Players.LocalPlayer.Name)
+    LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
+    if workspace.Arrow.Value == 1 or workspace.Roka.Value == 1 then
+        sendWebhook("Закончились все роки и стрелы!")
+    elseif LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
+        sendWebhook("бро, у тебя уже есть " .. LocalPlayer.PlayerStats.Stand.Value)
+        setclipboard(game.JobId)
+        ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
+        ca.TextSize=33;da.Parent=ca
+        break
+    end
+    ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
+    ca.TextSize=33;da.Parent=ca
+    if LocalPlayer.PlayerStats.Stand.Value == "None" then
+    wait(1)
+    UseItem(arr)
+    repeat wait() until LocalPlayer.PlayerStats:WaitForChild'Stand'.Value ~= "None"
+    wait(0.5)
+    ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
+    ca.TextSize=33;da.Parent=ca
+    if LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
+        sendWebhook("Вау, ты получил " .. LocalPlayer.PlayerStats.Stand.Value)
+        setclipboard(game.JobId)
+        ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
+        ca.TextSize=33;da.Parent=ca
+        break
+    end
+    UseItem(roka)
+else
+    UseItem(roka)
+end
+end
+end
