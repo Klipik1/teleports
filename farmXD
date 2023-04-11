@@ -79,9 +79,10 @@ roka = "Rokakaka"
 arr = "Mysterious Arrow"
 while wait() do
     game.workspace.Living:WaitForChild(LocalPlayer.name)
-    wait(5)
+    wait(4)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
-    if LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
+    wait(1)
+    if getgenv().omagiad["Да"] then
         sendWebhook("бро, у тебя уже есть " .. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
@@ -97,7 +98,7 @@ while wait() do
     wait(0.5)
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
-    if LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
+    if getgenv().omagiad["Да"] then
         sendWebhook("Вау, ты получил " .. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
