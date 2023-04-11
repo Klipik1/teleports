@@ -82,7 +82,7 @@ while wait() do
     wait(4)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
     wait(1)
-    if getgenv().omagiad["Да"] then
+    if game.Players.LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
         sendWebhook("бро, у тебя уже есть " .. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
@@ -98,7 +98,7 @@ while wait() do
     wait(0.5)
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
-    if getgenv().omagiad["Да"] then
+    if game.Players.LocalPlayer.PlayerStats.Stand.Value == getgenv().wat then
         sendWebhook("Вау, ты получил " .. LocalPlayer.PlayerStats.Stand.Value)
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
