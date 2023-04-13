@@ -137,9 +137,6 @@ while wait() do
     wait(0.5)
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
-    if game:GetService("Workspace").Living[LocalPlayer.Name].StandMorph.StandSkin ~= nil then
-    print("watahel")
-    end
     if table.find(wat["watafac"], LocalPlayer.PlayerStats.Stand.Value) then
         sendWebhook("Вы получили: " .. LocalPlayer.PlayerStats.Stand.Value.. " Сервер айди был скопирован")
         setclipboard(game.JobId)
