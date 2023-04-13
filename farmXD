@@ -117,6 +117,8 @@ while wait() do
     wait(4)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
     wait(1)
+    updateArrows()
+    updateRokakas()
     if workspace.Roka.Value <= 1 then
         sendWebhook("Закончились роки и стрелы для дальнейшего фарма")
         break
