@@ -1,3 +1,35 @@
+local function updateArrows()
+    local Children = {}
+    for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+        if Obj.Name == ("Mysterious Arrow") then
+            table.insert(Children, Obj)
+            if workspace:FindFirstChild("Arrow") then
+                workspace.Arrow.Value = #Children
+            end
+        end
+    end
+end
+local function updateRokakas()
+    local Children = {}
+    for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+        if Obj.Name == ("Rokakaka") then
+            table.insert(Children, Obj)
+            if workspace:FindFirstChild("Roka") then 
+                workspace.Roka.Value = #Children
+            end
+        end
+    end
+end
+if workspace:FindFirstChild("Arrow")==nil then
+    local hi = Instance.new("NumberValue")
+    hi.Parent = game.Workspace
+    hi.Name = ("Arrow")
+end
+if workspace:FindFirstChild("Roka")==nil then
+    local hi = Instance.new("NumberValue")
+    hi.Parent = game.Workspace
+    hi.Name = ("Roka")
+end
 repeat wait() until game:IsLoaded()
 local TPBypass
 TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(self, ...)
@@ -47,11 +79,11 @@ local clr = "0x4287f5"
             },
             ["fields"] = {
                 {
-                    ["name"] = "Акк", -- This is  the title of your field.
+                    ["name"] = "Аккаунт:", -- This is  the title of your field.
                     ["value"] = "||"..game.Players.LocalPlayer.Name.."||" -- This is the value of your field.
                 },
                 {
-                    ["name"] = "Что произошло", -- This is  the title of your field.
+                    ["name"] = "Что произошло:", -- This is  the title of your field.
                     ["value"] = Blehh -- This is the value of your field.
                 },
             }}
@@ -77,13 +109,19 @@ ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Загрузка..." ca.TextColor3
 ca.TextSize=33;da.Parent=ca
 roka = "Rokakaka"
 arr = "Mysterious Arrow"
+updateArrows()
+updateRokakas()
 while wait() do
     game.workspace.Living:WaitForChild(LocalPlayer.name)
     wait(4)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
     wait(1)
+    if workspace.Roka.Value <= 1 then
+        sendWebhook("Закончились роки и стрелы для дальнейшего фарма")
+        break
+    end
     if table.find(wat["watafac"], LocalPlayer.PlayerStats.Stand.Value) then
-        sendWebhook("бро, у тебя уже есть " .. LocalPlayer.PlayerStats.Stand.Value)
+        sendWebhook("У вас уже имеется: " .. LocalPlayer.PlayerStats.Stand.Value.. " Сервер айди был скопирован")
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
@@ -98,8 +136,11 @@ while wait() do
     wait(0.5)
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
+    if game:GetService("Workspace").Living[LocalPlayer.Name].StandMorph.StandSkin ~= nil then
+    print("watahel")
+    end
     if table.find(wat["watafac"], LocalPlayer.PlayerStats.Stand.Value) then
-        sendWebhook("Вау, ты получил " .. LocalPlayer.PlayerStats.Stand.Value)
+        sendWebhook("Вы получили: " .. LocalPlayer.PlayerStats.Stand.Value.. " Сервер айди был скопирован")
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
@@ -108,5 +149,6 @@ while wait() do
     UseItem(roka)
 else
     UseItem(roka)
+end
 end
 end
