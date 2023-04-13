@@ -1,3 +1,5 @@
+local workspace = game.workspace
+local LocalPlayer = game.Players.LocalPlayer
 local function updateArrows()
     local Children = {}
     for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
@@ -39,7 +41,6 @@ TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(s
       end
   return TPBypass(self, ...)
 end))
-LocalPlayer = game.Players.LocalPlayer
 function UseItem(item)
     local ohString1 = "LearnSkill"
     local ohTable2 = {
