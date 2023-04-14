@@ -145,6 +145,8 @@ while wait() do
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
         break
+    else
+    print("Выбит нежелаемый стенд: "..LocalPlayer.PlayersStats.Stand.Value)
     end
     UseItem(roka)
 else
