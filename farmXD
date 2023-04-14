@@ -121,7 +121,7 @@ while wait() do
     if ping >= 150 then wait(1) end
     if ping >= 200 then wait(1) end
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
-    wait(1)
+    task.wait(0.3)
     updateArrows()
     updateRokakas()
     if workspace.Roka.Value <= 1 then
@@ -129,7 +129,7 @@ while wait() do
         break
     end
     if table.find(wat["watafac"], LocalPlayer.PlayerStats.Stand.Value) then
-        sendWebhook("У вас уже имеется: " .. LocalPlayer.PlayerStats.Stand.Value.. " Сервер айди был скопирован")
+        sendWebhook("У вас уже имеется: " .. LocalPlayer.PlayerStats.Stand.Value.. ". Сервер айди был скопирован")
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
