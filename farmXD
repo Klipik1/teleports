@@ -146,7 +146,7 @@ while wait() do
         ca.TextSize=33;da.Parent=ca
         break
     else
-    print("Выбит нежелаемый стенд: "..LocalPlayer.PlayersStats.Stand.Value)
+    print("Получен нежелаемый стенд: "..LocalPlayer.PlayersStats.Stand.Value)
     end
     UseItem(roka)
 else
