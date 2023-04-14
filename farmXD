@@ -114,7 +114,7 @@ updateArrows()
 updateRokakas()
 while wait() do
     print("Количество Рокакак:"..workspace.Roka.Value)
-    print("Количество Стрел:"workspace.Arrow.Value)
+    print("Количество Стрел:"..workspace.Arrow.Value)
     game.workspace.Living:WaitForChild(LocalPlayer.name)
     wait(4)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
