@@ -1,5 +1,6 @@
 local workspace = game.workspace
 local LocalPlayer = game.Players.LocalPlayer
+local ping = (game:GetService("Stats"):WaitForChild("Network"):WaitForChild("ServerStatsItem"):WaitForChild"Data Ping":GetValue())
 local function updateArrows()
     local Children = {}
     for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
@@ -117,6 +118,8 @@ while wait() do
     print("Arrow: "..workspace.Arrow.Value)
     game.workspace.Living:WaitForChild(LocalPlayer.name)
     wait(4)
+    if ping >= 150 then wait(1) end
+    if ping >= 200 then wait(1) end
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
     wait(1)
     updateArrows()
