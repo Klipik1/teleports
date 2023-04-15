@@ -44,10 +44,7 @@ TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(s
 end))
 function UseItem(item)
     local ohString1 = "LearnSkill"
-    local ohTable2 = {
-    ["Skill"] = "Worthiness II",
-    ["SkillTreeType"] = "Character"
-    }
+    local ohTable2 = {["Skill"] = "Worthiness II", ["SkillTreeType"] = "Character"}
     LocalPlayer.Character.RemoteFunction:InvokeServer(ohString1, ohTable2)
     LocalPlayer.Backpack[item].Parent = LocalPlayer.Character
     LocalPlayer.Character[item]:Activate()
@@ -117,7 +114,6 @@ while wait() do
     print("Roka: "..workspace.Roka.Value)
     print("Arrow: "..workspace.Arrow.Value)
     game.workspace.Living:WaitForChild(LocalPlayer.name)
-    wait(4)
     if ping >= 150 then wait(1) end
     if ping >= 200 then wait(1) end
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
@@ -145,7 +141,7 @@ while wait() do
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
     if table.find(wat["watafac"], LocalPlayer.PlayerStats.Stand.Value) then
-        sendWebhook("Вы получили: " .. LocalPlayer.PlayerStats.Stand.Value.. " Сервер айди был скопирован")
+        sendWebhook("Вы получили: " .. LocalPlayer.PlayerStats.Stand.Value.. ". Сервер айди был скопирован")
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
@@ -154,7 +150,9 @@ while wait() do
     print("Unwanted Stand: "..LocalPlayer.PlayerStats.Stand.Value)
     end
     UseItem(roka)
+    wait(4.12)
 else
     UseItem(roka)
+    wait(4.12)
 end
 end
