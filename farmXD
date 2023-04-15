@@ -110,9 +110,15 @@ roka = "Rokakaka"
 arr = "Mysterious Arrow"
 updateArrows()
 updateRokakas()
+LocalPlayer.PlayerGui:WaitForChild("LoadingScreen")
+repeat wait(1) if LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then 
+firesignal(LocalPlayer.PlayerGui:FindFirstChild('LoadingScreen').Frames.Main.Play.MouseButton1Click)
+firesignal(LocalPlayer.PlayerGui:FindFirstChild('LoadingScreen').Frames.Gamemodes.MainGame.Play.MouseButton1Click)
+end until LocalPlayer.PlayerGui:FindFirstChild("HUD")
+task.wait(1)
 while wait() do
     print("Roka: "..workspace.Roka.Value)
-    print("Arrow: "..workspace.Arrow.Value)
+    print("Arrow: "..workspace.Arrow.Value) 
     game.workspace.Living:WaitForChild(LocalPlayer.name)
     if ping >= 150 then wait(1) end
     if ping >= 200 then wait(1) end
