@@ -129,7 +129,7 @@ while wait() do
     if ping >= 200 then wait(1) end
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
     task.wait(0.3)
-    if workspace.Roka.Value <= 1 then
+    if workspace.Roka.Value <= 1 or workspace.Arrow.Value <= 1 then
         sendWebhook("Закончились роки и стрелы для дальнейшего фарма")
         break
     end
