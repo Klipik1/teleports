@@ -110,6 +110,9 @@ roka = "Rokakaka"
 arr = "Mysterious Arrow"
 updateArrows()
 updateRokakas()
+if not LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then
+    game.TeleportService:TeleportToPlaceInstance(2809202155)
+end
 LocalPlayer.PlayerGui:WaitForChild("LoadingScreen")
 repeat wait(1) if LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then 
 firesignal(LocalPlayer.PlayerGui:FindFirstChild('LoadingScreen').Frames.Main.Play.MouseButton1Click)
@@ -117,6 +120,8 @@ firesignal(LocalPlayer.PlayerGui:FindFirstChild('LoadingScreen').Frames.Gamemode
 end until LocalPlayer.PlayerGui:FindFirstChild("HUD")
 task.wait(1)
 while wait() do
+    updateArrows()
+    updateRokakas()
     print("Roka: "..workspace.Roka.Value)
     print("Arrow: "..workspace.Arrow.Value) 
     game.workspace.Living:WaitForChild(LocalPlayer.name)
@@ -124,14 +129,12 @@ while wait() do
     if ping >= 200 then wait(1) end
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
     task.wait(0.3)
-    updateArrows()
-    updateRokakas()
     if workspace.Roka.Value <= 1 then
         sendWebhook("Закончились роки и стрелы для дальнейшего фарма")
         break
     end
     if table.find(wat["watafac"], LocalPlayer.PlayerStats.Stand.Value) then
-        sendWebhook("У вас уже имеется: " .. LocalPlayer.PlayerStats.Stand.Value.. ". Сервер айди был скопирован")
+        sendWebhook("У вас уже имеется: " .. LocalPlayer.PlayerStats.Stand.Value .. ". Сервер айди был скопирован")
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
@@ -147,7 +150,7 @@ while wait() do
     ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
     ca.TextSize=33;da.Parent=ca
     if table.find(wat["watafac"], LocalPlayer.PlayerStats.Stand.Value) then
-        sendWebhook("Вы получили: " .. LocalPlayer.PlayerStats.Stand.Value.. ". Сервер айди был скопирован")
+        sendWebhook("Вы получили: " .. LocalPlayer.PlayerStats.Stand.Value .. ". Сервер айди был скопирован")
         setclipboard(game.JobId)
         ca.Font=Enum.Font.SourceSansSemibold;ca.Text=LocalPlayer.PlayerStats.Stand.Value ca.TextColor3=Color3.new(0,1,1)
         ca.TextSize=33;da.Parent=ca
