@@ -111,7 +111,7 @@ arr = "Mysterious Arrow"
 updateArrows()
 updateRokakas()
 if not LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then
-    game.TeleportService:TeleportToPlaceInstance(2809202155)
+    game.TeleportService:Teleport(2809202155)
 end
 LocalPlayer.PlayerGui:WaitForChild("LoadingScreen")
 repeat wait(1) if LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then 
