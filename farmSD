@@ -1,6 +1,6 @@
 repeat wait() until game:IsLoaded()
 wait(7)
-local ping = (game:GetService("Stats"):WaitForChild("Network"):WaitForChild("ServerStatsItem"):WaitForChild"Data Ping":GetValue())
+local ping1 = (game:GetService("Stats"):WaitForChild("Network"):WaitForChild("ServerStatsItem"):WaitForChild"Data Ping":GetValue())
 local workspace = game.workspace
 local LocalPlayer = game.Players.LocalPlayer
 getgenv().AutoCaptcha = true
@@ -190,6 +190,7 @@ if workspace.Rib.Value == 10 then
             ["SkillTreeType"] = "Character"
         }
         LocalPlayer.Character.RemoteFunction:InvokeServer(A_1, A_2)
+        task.wait(0.2)
         local args = {[1] = "EndDialogue", [2] = { ["NPC"] = "Rib Cage of The Saint's Corpse", ["Option"] = "Option1", ["Dialogue"] = "Dialogue2" }}
         Character.RemoteEvent:FireServer(unpack(args))
     end
@@ -204,9 +205,9 @@ if workspace.Rib.Value == 10 then
             sendWebhook1("Рибки Закончились. Ваш пити: ".. Pity())
             local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100"))
             for i,v in pairs(Servers.data) do
-                if v.playing ~= v.maxPlayers then
+                if v.playing ~= v.maxPlayers and v.ping <= 100 then
                     game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
-                end
+            end
             end
         end
     
@@ -228,17 +229,17 @@ if workspace.Rib.Value ~= 10 then
                         if aga.ProximityPrompt.ObjectText == "Rib Cage of The Saint's Corpse" and aga2.Transparency ~= 1 then
                             LocalPlayer.Character.HumanoidRootPart.CFrame = aga:GetModelCFrame()
                             wait(0.5)
-                            if ping >= 200 then wait(0.5) end
+                            if ping1 >= 200 then task.wait(0.5) end
                         if aga:FindFirstChild("ProximityPrompt") then
                                 fireproximityprompt(aga.ProximityPrompt)
-                                wait(1.5)
-                                if ping >= 200 then wait(0.5) end
+                                wait(1)
+                                if ping1 >= 200 then task.wait(0.5) end
                                 updateRibs()
                             if workspace.Rib.Value == 10 then
                                 sendWebhook1("Рибки фулл")
                                 local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100"))
                                 for i,v in pairs(Servers.data) do
-                                    if v.playing ~= v.maxPlayers then
+                                    if v.playing ~= v.maxPlayers and v.ping <= 100 then
                                         game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
                                     end
                                 end
@@ -250,13 +251,13 @@ if workspace.Rib.Value ~= 10 then
                     end
             end
         end
-        task.wait(2)
+        task.wait(1)
         if not game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.DropMoney.Money:FindFirstChild("+ITEM: Rib Cage of The Saint's Corpse") then
             local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100"))
             for i,v in pairs(Servers.data) do
-                if v.playing ~= v.maxPlayers then
+                if v.playing ~= v.maxPlayers and v.ping <= 100 then
                     game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
-                end
+            end
             end
         end
     end
