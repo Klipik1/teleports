@@ -205,7 +205,7 @@ if workspace.Rib.Value == 10 then
             sendWebhook1("Рибки Закончились. Ваш пити: ".. Pity())
             local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100"))
             for i,v in pairs(Servers.data) do
-                if v.playing ~= v.maxPlayers and v.ping <= 100 then
+                if v.playing ~= v.maxPlayers and v.ping <= 150 then
                     game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
             end
             end
@@ -232,14 +232,14 @@ if workspace.Rib.Value ~= 10 then
                             if ping1 >= 200 then task.wait(0.5) end
                         if aga:FindFirstChild("ProximityPrompt") then
                                 fireproximityprompt(aga.ProximityPrompt)
-                                wait(1)
-                                if ping1 >= 200 then task.wait(0.5) end
+                                wait(1.2)
+                                if ping1 >= 200 then task.wait(0.8) end
                                 updateRibs()
                             if workspace.Rib.Value == 10 then
                                 sendWebhook1("Рибки фулл")
                                 local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100"))
                                 for i,v in pairs(Servers.data) do
-                                    if v.playing ~= v.maxPlayers and v.ping <= 100 then
+                                    if v.playing ~= v.maxPlayers and v.ping <= 150 then
                                         game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
                                     end
                                 end
@@ -255,7 +255,7 @@ if workspace.Rib.Value ~= 10 then
         if not game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.DropMoney.Money:FindFirstChild("+ITEM: Rib Cage of The Saint's Corpse") then
             local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100"))
             for i,v in pairs(Servers.data) do
-                if v.playing ~= v.maxPlayers and v.ping <= 100 then
+                if v.playing ~= v.maxPlayers and v.ping <= 150 then
                     game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
             end
             end
