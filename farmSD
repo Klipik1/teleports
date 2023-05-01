@@ -216,6 +216,7 @@ end
 if workspace.Rib.Value ~= 10 then
     print("10 ribs no here, starting farm...")
     XD()
+    wait(1)
     while wait() do
         for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
             if aga:IsA("Model") then
@@ -245,7 +246,7 @@ if workspace.Rib.Value ~= 10 then
                     end
             end
         end
-        task.wait(5)
+        task.wait(2)
         if not game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.DropMoney.Money:FindFirstChild("+ITEM: Rib Cage of The Saint's Corpse") then
             local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100"))
             for i,v in pairs(Servers.data) do
