@@ -1,5 +1,6 @@
 repeat wait() until game:IsLoaded()
 wait(7)
+local ping = (game:GetService("Stats"):WaitForChild("Network"):WaitForChild("ServerStatsItem"):WaitForChild"Data Ping":GetValue())
 local workspace = game.workspace
 local LocalPlayer = game.Players.LocalPlayer
 getgenv().AutoCaptcha = true
@@ -173,6 +174,7 @@ print("Completed loading skip")
 updateRibs()
 if workspace.Rib.Value == 10 then
     print("10 ribs here")
+    task.wait(1)
     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801.063, -42.5264, -861.054)
     local Player = game.Players.LocalPlayer
     local Character = Player.Character or Player.CharacterAdded:Wait()
@@ -216,7 +218,7 @@ end
 if workspace.Rib.Value ~= 10 then
     print("10 ribs no here, starting farm...")
     XD()
-    wait(1)
+    task.wait(2)
     while wait() do
         for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
             if aga:IsA("Model") then
@@ -226,9 +228,11 @@ if workspace.Rib.Value ~= 10 then
                         if aga.ProximityPrompt.ObjectText == "Rib Cage of The Saint's Corpse" and aga2.Transparency ~= 1 then
                             LocalPlayer.Character.HumanoidRootPart.CFrame = aga:GetModelCFrame()
                             wait(0.5)
+                            if ping >= 200 then wait(0.5) end
                         if aga:FindFirstChild("ProximityPrompt") then
                                 fireproximityprompt(aga.ProximityPrompt)
                                 wait(1.5)
+                                if ping >= 200 then wait(0.5) end
                                 updateRibs()
                             if workspace.Rib.Value == 10 then
                                 sendWebhook1("Рибки фулл")
