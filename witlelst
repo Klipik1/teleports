@@ -1,7 +1,14 @@
-userids = {
-[2566040440] = true, -- GetNubbed360
-[1661026302] = true, -- skykio124
-[1921327975] = true, -- BaconHairedBoi3
-[1661014904] = true -- skykio123
-}
-return userids
+local http_request = http_request or request or HttpPost or syn.request or http.request 
+local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
+local decoded = game:GetService('HttpService'):JSONDecode(body)
+local hwid_list = {"fingerprint", "Krnl-Hwid", "shadow_hardware", "Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint", "Fingerprint", "SW-Fingerprint", "Sw-Fingerprint", "Flux-Fingerprint"};
+local hwid = "";    
+
+for i, v in next, hwid_list do
+    if decoded.headers[v] then
+        hwid = decoded.headers[v];
+            setclipboard(hwid)
+            print(hwid)
+        break
+    end
+end
