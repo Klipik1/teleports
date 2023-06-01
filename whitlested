@@ -10,7 +10,7 @@ getgenv().allowedkeys = {
 
 for i, v in next, hwid_list do
     if decoded.headers[v] then
-        if key == decoded.headers[v] and key == allowedkeys then
+        if key == decoded.headers[v] and decoded.headers[v] == allowedkeys then
             print("Whitelisted")
            else
                 print("no")
