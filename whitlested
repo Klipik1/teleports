@@ -4,10 +4,16 @@ local decoded = game:GetService('HttpService'):JSONDecode(body)
 local hwid_list = {"fingerprint", "Krnl-Hwid", "shadow_hardware", "Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint", "Fingerprint", "SW-Fingerprint", "Sw-Fingerprint", "Flux-Fingerprint"};
 local hwid = "";    
 
+getgenv().allowedkeys = {
+    "50932fa6b23dc4711d2d2acfceae9046"
+}
+
 for i, v in next, hwid_list do
     if decoded.headers[v] then
-        if key == decoded.headers[v] then
+        if key == decoded.headers[v] and key == allowedkeys then
             print("Whitelisted")
+           else
+                print("no")
         end
         break
     end
