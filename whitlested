@@ -1,14 +1,14 @@
-local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/Klipik1/teleports/main/witlelst"))()
-if whitelistecheck[game:service('Players').LocalPlayer.UserId] then
-print("Whitelisted ^-^")
-local TPBypass
-TPBypass = hookfunction(getrawmetatable(game).__namecall, newcclosure(function(self, ...)
-  local args = {...}
-  if self.Name == "Returner" and args[1] == "idklolbrah2de"  then
-          return "  ___XP DE KEY"
-      end
-  return TPBypass(self, ...)
-end))
-else
-  game:service('Players').LocalPlayer:Kick('No exploiting! (#NoNoNo)')
+local http_request = http_request or request or HttpPost or syn.request or http.request 
+local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
+local decoded = game:GetService('HttpService'):JSONDecode(body)
+local hwid_list = {"fingerprint", "Krnl-Hwid", "shadow_hardware", "Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint", "Fingerprint", "SW-Fingerprint", "Sw-Fingerprint", "Flux-Fingerprint"};
+local hwid = "";    
+
+for i, v in next, hwid_list do
+    if decoded.headers[v] then
+        if key == decoded.headers[v] then
+            print("Whitelisted")
+        end
+        break
+    end
 end
