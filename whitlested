@@ -16,12 +16,12 @@ for i, v in next, hwid_list do
                     print("Whitelisted")
                 else
                     print("SO EZ DUMB RETARD")
-                    LocalPlayer:Kick("LOL NO WHITELISTED SKID")
+                    LocalPlayer:kick("LOL NO WHITELISTED SKID")
                 end
             end
         else
             print("LOL GOFFY ASS RETARD MONKEY")
-            LocalPlayer:Kick("LOL NOT WHITELISTED SKID TRYIED TO START MY GODDEST SCRIPTS XDDDDDDDDDD")
+            LocalPlayer:kick("LOL NOT WHITELISTED SKID TRYIED TO START MY GODDEST SCRIPTS XDDDDDDDDDD")
         end
     end
 end
