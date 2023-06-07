@@ -18,7 +18,7 @@ for i, v in next, hwid_list do
                         local nefor = Notification.new(style, content, message)
                         nefor:deleteTimeout(4)
                     end
-                    lol("info", "Info", "You was whitelisted!")
+                    lol("info", "Info", "You were whitelisted!")
                     break
                 else
                     print("no")
